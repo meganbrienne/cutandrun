@@ -3,6 +3,7 @@ process DEEPTOOLS_MULTIBAMSUMMARY {
     label 'process_high'
 
     conda "bioconda::deeptools=3.5.1"
+    conda "conda-forge::matplotlib=3.5.3"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
         'https://depot.galaxyproject.org/singularity/deeptools:3.5.1--py_0' :
         'biocontainers/deeptools:3.5.1--py_0' }"
